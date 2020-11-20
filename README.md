@@ -2,7 +2,7 @@
 
 Use github action to help you complete the dummy daily health report.
 
-## Usage
+## Usage (by xjtu Zeqi Wu)
 
 1. Fork this repo.
 2. Add netid and password in repositories `Secrets`.
