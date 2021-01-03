@@ -24,7 +24,7 @@ def main():
     options.add_argument("--window-size=1920,1080")
     driver = webdriver.Chrome(options=options)
     driver.get("http://jkrb.xjtu.edu.cn/EIP/user/index.htm")
-    wait = WebDriverWait(driver=driver, timeout=10)
+    wait = WebDriverWait(driver=driver, timeout=30)
     wait.until((EC.url_contains("org.xjtu.edu.cn")))
     elem = wait.until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="form1"]/input[1]'))
@@ -61,12 +61,6 @@ def main():
         driver.switch_to.frame(iframe)
         iframe = driver.find_element_by_xpath("//iframe[@onload='__iframe_onload1()']")
         driver.switch_to.frame(iframe)
-
-        driver.find_element_by_xpath("//input[@value='绿色']").click()
-        logger.info("Check green status")
-
-        driver.find_element_by_xpath("//input[@id='mini-4$ck$0']").click()
-        logger.info("Check has Xi'an QR")
 
         temp = str(round(36 + random(), 1))
         driver.find_element_by_xpath(
